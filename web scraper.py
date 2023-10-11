@@ -29,7 +29,7 @@ column_data = table.find_all('tr')
 for row in column_data[1:]:
     row_data=row.find_all('td')
     row_title=row.find('th').text.strip() #this is needed since the titles are under a different html tag
-    individual_row_data = [data.text.strip() for data in row_data][:3]
+    individual_row_data = [data.text.strip() for data in row_data][:3] #disinclude the references column
     individual_row_data.insert(1,row_title)
     
     length = len(dataframe)
